@@ -22,3 +22,24 @@ yarn run start
 ```
 
 Thank you for using the extension. Any suggestions/issues/problems are welcomed!
+
+## 直接引入网页使用
+```html
+<script>
+window.chrome = {
+    runtime: {
+        sendMessage() { },
+        onMessage: {
+            addListener() { }
+        }
+    },
+    storage: {
+        local: {
+            get(options, callback) { callback({ autoType: '1' }) },
+            set() { }
+        }
+    }
+}
+</script>
+<script src="https://raw.githubusercontent.com/eric-gitta-moore/smart-toc/resource/dist/toc.js"></script>
+```
